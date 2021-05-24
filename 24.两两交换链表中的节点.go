@@ -6,13 +6,6 @@ package leetcode
  * [24] 两两交换链表中的节点
  */
 
-//  if head == nil || head.Next == nil {
-// 	return head
-// }
-// p := head.Next
-// head.Next = swapPairs(p.Next)
-// p.Next = head
-// return p
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -22,6 +15,7 @@ package leetcode
  * }
  */
 
+//  链表递归
 func swapPairs(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head

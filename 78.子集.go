@@ -15,6 +15,7 @@ func subsets(nums []int) [][]int {
 	return ret
 }
 
+// 全排列
 func reverse(nums []int, i int, sub []int) {
 	// fmt.Printf("format string %d,%v\n", i, sub)
 	track := make([]int, len(sub))

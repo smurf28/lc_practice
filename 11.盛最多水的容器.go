@@ -7,6 +7,7 @@ package leetcode
  */
 
 // @lc code=start
+// 双向指针
 func maxArea(height []int) int {
 	left_i := 0
 	right_i := len(height) - 1

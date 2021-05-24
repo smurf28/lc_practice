@@ -44,6 +44,7 @@ func remove(s []string, i int) []string {
 	return append(s[:i], s[i+1:]...)
 }
 
+// 组合
 func combinations(index int, digitStr []string, str []string) {
 	if index == len(digitStr) {
 		res = append(res, strings.Join(str, ""))
