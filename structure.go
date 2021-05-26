@@ -7,66 +7,86 @@ type ListNode struct {
 	Next *ListNode
 }
 
-type BTree struct {
-	Val    int
-	LChild *BTree
-	RChild *BTree
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
 // 遍历
 // 前序遍历
-func preorderTraversal(root *BTree) {
+// func preorderTraversal(root *TreeNode) {
+// 	if root == nil {
+// 		return
+// 	}
+// 	fmt.Printf("%d", root.Val)
+// 	preorderTraversal(root.Left)
+// 	preorderTraversal(root.Right)
+// }
+
+func preorderTraversal(root *TreeNode) []int {
+	res := []int{}
+	reverse1(root, &res)
+	return res
+}
+
+func reverse1(root *TreeNode, res *[]int) {
 	if root == nil {
 		return
 	}
-	fmt.Printf("%d", root.Val)
-	preorderTraversal(root.LChild)
-	preorderTraversal(root.RChild)
+	*res = append(*res, root.Val)
+	reverse1(root.Left, res)
+	reverse1(root.Right, res)
 }
 
-func preorderTraversal1(root *BTree) []int {
+func preorderTraversal1(root *TreeNode) []int {
 	if root == nil {
 		return nil
 	}
 	result := make([]int, 0)
-	stack := make([]*BTree, 0)
+	stack := make([]*TreeNode, 0)
 
 	for root != nil || len(stack) != 0 {
 		for root != nil {
 			result = append(result, root.Val)
 			stack = append(stack, root)
-			root = root.LChild
+			root = root.Left
 		}
 		// pop
 		top := stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
-		root = top.RChild
+		root = top.Right
 	}
 	return result
 }
 
-func inorderTraversal(root *BTree) {
+func inorderTraversal(root *TreeNode) []int {
+	res := []int{}
+	inReverse(root, &res)
+	return res
+}
+
+func inReverse(root *TreeNode, res *[]int) {
 	if root == nil {
 		return
 	}
-
-	preorderTraversal(root.LChild)
-	fmt.Printf("%d", root.Val)
-	preorderTraversal(root.RChild)
+	inReverse(root.Left, res)
+	*res = append(*res, root.Val)
+	inReverse(root.Right, res)
 }
 
-func inorderTraversal1(root *BTree) []int {
+func inorderTraversal1(root *TreeNode) []int {
 	if root == nil {
 		return nil
 	}
 	result := make([]int, 0)
-	stack := make([]*BTree, 0)
+	stack := make([]*TreeNode, 0)
 
 	for root != nil || len(stack) != 0 {
 		// left
 		for root != nil {
 			stack = append(stack, root)
-			root = root.LChild
+			root = root.Left
 		}
 		if len(stack) != 0 {
 			// pop
@@ -76,19 +96,19 @@ func inorderTraversal1(root *BTree) []int {
 			// fmt.Printf("%d", top.Val)
 			result = append(result, top.Val)
 			// right
-			root = top.RChild
+			root = top.Right
 		}
 
 	}
 	return result
 }
 
-func postorderTraversal(root *BTree) {
+func postorderTraversal(root *TreeNode) {
 	if root == nil {
 		return
 	}
 
-	preorderTraversal(root.LChild)
-	preorderTraversal(root.RChild)
+	preorderTraversal(root.Left)
+	preorderTraversal(root.Right)
 	fmt.Printf("%d", root.Val)
 }

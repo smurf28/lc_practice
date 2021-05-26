@@ -42,9 +42,10 @@ func TestSubsets(t *testing.T) {
 }
 
 func TestTree(t *testing.T) {
-	head := &BTree{1, &BTree{2, &BTree{4, nil, nil}, nil}, &BTree{3, nil, nil}}
+	head := &TreeNode{1, &TreeNode{2, &TreeNode{4, nil, nil}, nil}, &TreeNode{3, nil, nil}}
 	res := inorderTraversal1(head)
 	fmt.Println("\ninorder", res)
-	inorderTraversal(head)
+	res = inorderTraversal(head)
+	fmt.Println("\ninorder", res)
 	// inorderTraversal(head)
 }
