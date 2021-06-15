@@ -45,7 +45,19 @@ func TestTree(t *testing.T) {
 	head := &TreeNode{1, &TreeNode{2, &TreeNode{4, nil, nil}, nil}, &TreeNode{3, nil, nil}}
 	res := inorderTraversal1(head)
 	fmt.Println("\ninorder", res)
-	res = inorderTraversal(head)
+	res = postorderTraversal(head)
 	fmt.Println("\ninorder", res)
 	// inorderTraversal(head)
+}
+
+func TestSortArrayS(t *testing.T) {
+	nums := []int{2, 3, 1, 4}
+	heapSort(nums)
+	fmt.Println(nums)
+
+	// a := 1
+	// b := 2
+	// swap(&a, &b)
+	// // swap1(a, b)
+	// fmt.Println("a,b:", a, b)
 }

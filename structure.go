@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -103,12 +101,45 @@ func inorderTraversal1(root *TreeNode) []int {
 	return result
 }
 
-func postorderTraversal(root *TreeNode) {
+func postorderTraversal(root *TreeNode) []int {
+	res := []int{}
+	postReverse(root, &res)
+	return res
+}
+
+func postReverse(root *TreeNode, res *[]int) {
 	if root == nil {
 		return
 	}
+	postReverse(root.Left, res)
+	postReverse(root.Right, res)
+	*res = append(*res, root.Val)
+}
 
-	preorderTraversal(root.Left)
-	preorderTraversal(root.Right)
-	fmt.Printf("%d", root.Val)
+// 当前经过节点是叶子节点。
+// 当前经过节点的右子节点是上一次访问的节点。
+func postorderTraversal1(root *TreeNode) []int {
+	result := make([]int, 0)
+	stack := make([]*TreeNode, 0)
+	var pre *TreeNode = nil
+	if root != nil || len(stack) != 0 {
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+
+		if root.Right == nil || root.Right == pre {
+
+		} else {
+			stack = append(stack, root.Right)
+			root = root.Right
+		}
+	}
+	return result
+}
+
+func swap(a, b *int) {
+	*a ^= *b
+	*b ^= *a
+	*a ^= *b
 }
