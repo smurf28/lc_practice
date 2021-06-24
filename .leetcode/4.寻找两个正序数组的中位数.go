@@ -1,3 +1,5 @@
+package leetcode
+
 /*
  * @lc app=leetcode.cn id=4 lang=golang
  *
@@ -15,23 +17,22 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 }
 
-func partition(nums []int, start, end int) int {
-	pivot := nums[start]
-	// 小于pivote的放左边，大于pivote 放右边
-	for start != end {
-		for nums[end] >= pivot && start < end {
-			end--
-		}
-		nums[start] = nums[end]
+// func partition(nums []int, start, end int) int {
+// 	pivot := nums[start]
+// 	// 小于pivote的放左边，大于pivote 放右边
+// 	for start != end {
+// 		for nums[end] >= pivot && start < end {
+// 			end--
+// 		}
+// 		nums[start] = nums[end]
 
-		for nums[start] <= pivot && start < end {
-			start++
-		}
-		nums[end] = nums[start]
-	}
-	nums[start] = pivot
-	return start
-}
+// 		for nums[start] <= pivot && start < end {
+// 			start++
+// 		}
+// 		nums[end] = nums[start]
+// 	}
+// 	nums[start] = pivot
+// 	return start
+// }
 
 // @lc code=end
-

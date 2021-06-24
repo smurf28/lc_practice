@@ -1,4 +1,4 @@
-package common
+package leetcode
 
 type ListNode struct {
 	Val  int
@@ -143,4 +143,3 @@ func swap(a, b *int) {
 	*b ^= *a
 	*a ^= *b
 }
-

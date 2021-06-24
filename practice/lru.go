@@ -2,6 +2,8 @@ package practice
 
 import "container/list"
 
+
+//  通过双向链表建立队列实现 最
 type Cache struct {
 	// 内存总空间
 	maxBytes int64

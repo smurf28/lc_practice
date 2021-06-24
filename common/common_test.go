@@ -117,4 +117,45 @@ func TestRoll(t *testing.T) {
 	// 			做选择
 	// 			backtrack(选择列表,路径)
 	// 			撤销选择
+
+	// atomic.AddUint64(addr *uint64, delta uint64)
+
+}
+
+// 分治法
+// func traversal(root *TreeNode) ResultType  {
+//     // nil or leaf
+//     if root == nil {
+//         // do something and return
+//     }
+
+//     // Divide
+//     ResultType left = traversal(root.Left)
+//     ResultType right = traversal(root.Right)
+
+//     // Conquer
+//     ResultType result = Merge from left and right
+
+//     return result
+// }
+
+func worker(name string, stopch chan struct{}) {
+	for {
+		select {
+		case <-stopch:
+			fmt.Println("receive a stop signal, ", name)
+			return
+		default:
+			fmt.Println("worker", name)
+		}
+	}
+
+}
+
+const (
+	test = 123
+)
+
+func TestConst(t *testing.T) {
+	t.Log(test)
 }
