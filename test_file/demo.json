@@ -1,0 +1,21 @@
+{
+  "autoExecution": false,
+  "ciParams": "{\"BRANCH\":\"master\",\"PACKET_NAME\":\"admintest\",\"PACKET_BIN_FILE\":\"admintest\",\"BUILD_DOCKER_IMAGE\":\"true\",\"GERRIT_TOPIC\":\"testv1.274\",\"GERRIT_CHANGE_SUBJECT\":\"add\",\"GERRIT_CHANGE_OWNER_NAME\":\"ranjiayu\",\"SCM_COMMIT_ID\":\"1afbcfea56dc06e7ca4e8c75bac368a401a72ac8\",\"isSkip\":\"true\"}",
+  "cdStageParams": [
+    {
+      "id": 1319,
+      "order": 0,
+      "param": "{\"changeId\":0,\"isSkip\":\"true\",\"newChange\":false,\"title\":\"\",\"reason\":\"\",\"operatorDuration\":\"10\",\"riskLevel\":3,\"changeStartTime\":\"2021-06-30 14:45:05\",\"changeEndTime\":\"2021-06-30 16:45:05\",\"stepTemplateId\":\"\",\"stepInfoList\":[{\"changeInfo\":\"1\",\"midVerifyInfo\":\"1\",\"rollbackInfo\":\"1\",\"stepId\":1}],\"changeGroupValueList\":[{\"fieldId\":1,\"value\":\"是\"},{\"fieldId\":2,\"value\":\"2121\"},{\"fieldId\":3,\"value\":\"是\"},{\"fieldId\":4,\"value\":\"是\"},{\"fieldId\":7,\"value\":\"是\"},{\"fieldId\":8,\"value\":\"212121\"}],\"applicant\":\"liuhuilin\",\"approverList\":[{\"name\":\"liuhuilin\"}],\"changeType\":410,\"urgent\":true,\"approvalType\":2}"
+    },
+    {
+      "id": 1320,
+      "order": 1,
+      "param": "{\"service\":{\"admintest\":{\"confName\":\"e697a9e4b88ae5a5bd\",\"version\":\"testv1.274\",\"image_name\":\"/library/admintest-testv1.274:default\"}},\"batch\":{\"batch_interval\":1,\"batch_type\":\"manual\",\"batch_num\":[1]},\"idcPodBatchConfig\":[],\"isSkip\":\"true\"}"
+    },
+    {
+      "id": 1321,
+      "order": 2,
+      "param": "{\"service\":{\"admintest\":{\"confName\":\"default-2\",\"version\":\"testv1.274\",\"image_name\":\"/library/admintest-testv1.274:default\"}},\"batch\":{\"batch_interval\":1,\"batch_type\":\"manual\",\"batch_num\":[1,1]},\"idcPodBatchConfig\":[],\"isSkip\":\"false\"}"
+    }
+  ]
+}

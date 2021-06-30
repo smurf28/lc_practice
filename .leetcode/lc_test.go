@@ -61,3 +61,7 @@ func TestSortArrayS(t *testing.T) {
 	// // swap1(a, b)
 	// fmt.Println("a,b:", a, b)
 }
+
+func TestLongestCommonSubsequence(t *testing.T) {
+	t.Log(longestCommonSubsequence("abcde", "ace"))
+}

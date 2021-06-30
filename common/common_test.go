@@ -2,6 +2,7 @@ package common
 
 import (
 	"fmt"
+	"reflect"
 	"sort"
 	"strconv"
 	"testing"
@@ -158,4 +159,27 @@ const (
 
 func TestConst(t *testing.T) {
 	t.Log(test)
+}
+
+type CustomError struct{}
+
+func (*CustomError) Error() string {
+	return ""
+}
+
+// 判断一个类型是否实现了某个接口
+func TestReflect(t *testing.T) {
+
+	typeOfError := reflect.TypeOf((*error)(nil)).Elem()
+	customErrorPtr := reflect.TypeOf(&CustomError{})
+	customError := reflect.TypeOf(CustomError{})
+
+	fmt.Println(customErrorPtr.Implements(typeOfError)) // #=> true
+	fmt.Println(customError.Implements(typeOfError))    // #=> false
+
+	s := make([]int, 1000, 1000)
+
+	for index, _ := range s {
+		s[index] = index
+	}
 }

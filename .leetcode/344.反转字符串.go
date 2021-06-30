@@ -1,4 +1,5 @@
 package leetcode
+
 /*
  * @lc app=leetcode.cn id=344 lang=golang
  *
@@ -23,5 +24,5 @@ func reverseS(s []byte, index int) {
 	s[index] ^= s[right]
 	reverseS(s, index+1)
 }
-// @lc code=end
 
+// @lc code=end

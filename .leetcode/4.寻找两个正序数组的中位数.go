@@ -10,11 +10,11 @@ package leetcode
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	// lp := len(nums1) - 1
 	// rp := len(nums2) - 1
-	pos := (len(nums1) + len(nums2)) / 2
-	if (len(nums1)+len(nums2))%2 == 0 {
-		pos = (len(nums1) + len(nums2)) / 2
-	}
-
+	// pos := (len(nums1) + len(nums2)) / 2
+	// if (len(nums1)+len(nums2))%2 == 0 {
+	// 	pos = (len(nums1) + len(nums2)) / 2
+	// }
+	return 0
 }
 
 // func partition(nums []int, start, end int) int {

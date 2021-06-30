@@ -138,8 +138,8 @@ func postorderTraversal1(root *TreeNode) []int {
 	return result
 }
 
-func swap(a, b *int) {
-	*a ^= *b
-	*b ^= *a
-	*a ^= *b
-}
+// func swap(a, b *int) {
+// 	*a ^= *b
+// 	*b ^= *a
+// 	*a ^= *b
+// }
