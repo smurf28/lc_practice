@@ -65,3 +65,7 @@ func TestSortArrayS(t *testing.T) {
 func TestLongestCommonSubsequence(t *testing.T) {
 	t.Log(longestCommonSubsequence("abcde", "ace"))
 }
+
+func TestMinRemoveToMakeValid(t *testing.T) {
+	t.Log(minRemoveToMakeValid("lee(t(code)"))
+}

@@ -183,3 +183,13 @@ func TestReflect(t *testing.T) {
 		s[index] = index
 	}
 }
+
+// SET lock_key random_value NX PX 5000
+
+// func TestRedis(t *testing.T) {
+// 	if redis.call("get", key[1]) == arg[1] {
+// 		return redis.call("del", key[1])
+// 	} else {
+// 		return 0
+// 	}
+// }

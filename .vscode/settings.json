@@ -1,0 +1,5 @@
+{
+  "go.alternateTools": {
+    "dlv": "/usr/bin/arch -arch arm64 /Users/liuhuilin/work/code/bin/dlv"
+  }
+}

@@ -5,7 +5,6 @@ package leetcode
  *
  * [344] 反转字符串
  */
-
 // @lc code=start
 
 // 递归解法
@@ -19,9 +18,7 @@ func reverseS(s []byte, index int) {
 		return
 	}
 
-	s[index] ^= s[right]
-	s[right] ^= s[index]
-	s[index] ^= s[right]
+	s[index], s[right] = s[right], s[index]
 	reverseS(s, index+1)
 }
 
