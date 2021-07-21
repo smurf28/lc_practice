@@ -69,3 +69,17 @@ func TestLongestCommonSubsequence(t *testing.T) {
 func TestMinRemoveToMakeValid(t *testing.T) {
 	t.Log(minRemoveToMakeValid("lee(t(code)"))
 }
+
+func TestReorderList(t *testing.T) {
+	head := &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4, Next: nil}}}}
+
+	// head3.Next = head4
+	reorderList(head)
+	for head != nil {
+		fmt.Println("head", head)
+		head = head.Next
+	}
+
+	fmt.Printf("num ")
+
+}
